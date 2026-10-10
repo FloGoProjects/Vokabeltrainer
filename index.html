@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de" data-theme="heft">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vokabel-Gold</title>
+  <meta name="description" content="Vokabeltrainer mit Karteikasten und Vokabel-Gold">
+  <meta name="theme-color" content="#1d3c8f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Vokabel-Gold">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/themes.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="brand">Vokabel-Gold</h1>
+    <div class="stats">
+      <span class="stat streak" id="streak" title="Lerntage in Folge"></span>
+      <span class="stat gold" id="gold" title="Vokabel-Gold"></span>
+    </div>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <nav class="tabs" id="tabs">
+    <button data-nav="home">Lernen</button>
+    <button data-nav="rewards">Belohnungen</button>
+    <button data-nav="settings">Einstellungen</button>
+  </nav>
+
+  <dialog id="pin-dialog" class="panel">
+    <form method="dialog" id="pin-form">
+      <h2 id="pin-title">Eltern-PIN</h2>
+      <p id="pin-text"></p>
+      <input id="pin-input" type="password" inputmode="numeric" autocomplete="off" maxlength="8" required>
+      <p class="error" id="pin-error"></p>
+      <div class="row">
+        <button value="cancel" formnovalidate class="secondary">Abbrechen</button>
+        <button value="ok" class="primary">OK</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

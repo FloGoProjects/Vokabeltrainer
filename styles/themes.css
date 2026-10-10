@@ -1,0 +1,134 @@
+/* Drei Skins. Jeder setzt nur Variablen (+ wenige Deko-Regeln), die Bedienung bleibt gleich. */
+
+/* ---------- Heft: kariertes/liniertes Schulheft, Füller-Blau, roter Rand ---------- */
+[data-theme=heft] {
+  --font: "Chalkboard SE", "Comic Sans MS", "Segoe Print", system-ui, sans-serif;
+  --font-head: "Chalkboard SE", "Marker Felt", "Comic Sans MS", system-ui, sans-serif;
+  --head-spacing: 0;
+  --bg: repeating-linear-gradient(#fdfcf5 0 31px, #b9cbe8 31px 32px), #fdfcf5;
+  --text: #1d2b53;
+  --muted: #5a6585;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-border: 1px solid #c9d3e6;
+  --panel-shadow: 3px 4px 0 rgba(29, 60, 143, 0.12);
+  --radius: 4px;
+  --blur: none;
+  --bar-bg: #1d3c8f;
+  --bar-text: #fff;
+  --bar-border: 0;
+  --btn-bg: #fff;
+  --btn-text: #1d3c8f;
+  --btn-border: 2px solid #1d3c8f;
+  --btn-radius: 6px;
+  --btn-shadow: 2px 2px 0 #1d3c8f;
+  --accent: #1d3c8f;
+  --accent-text: #fff;
+  --accent-strong: #1d3c8f;
+  --chip-bg: #eef2fb;
+  --input-bg: #fff;
+  --input-border: 2px solid #1d3c8f;
+  --focus: #d9463b;
+  --bar-track: #e3e8f4;
+  --gold: #f2b705;
+  --gold-text: #9a6b00;
+  --ok-bg: #e3f4e1;
+  --warn-bg: #fff2cc;
+  --bad-bg: #fde3e0;
+  --bad: #d9463b;
+  --fb-border: 2px dashed currentColor;
+}
+/* roter Heftrand links */
+[data-theme=heft] .panel { border-left: 4px double #d9463b; }
+[data-theme=heft] .feedback.ok { color: #1f6b2a; }
+[data-theme=heft] .feedback.bad { color: #a42b22; }
+[data-theme=heft] .feedback.almost, [data-theme=heft] .feedback.other { color: #8a5a00; }
+[data-theme=heft] .feedback p { color: var(--text); }
+[data-theme=heft] .feedback .fb-title { color: inherit; }
+
+/* ---------- Hypermodern: dunkel, Verlauf, Glas ---------- */
+[data-theme=modern] {
+  --font: -apple-system, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --font-head: -apple-system, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  --head-spacing: -0.01em;
+  --bg: radial-gradient(1200px 600px at 10% -10%, #3b1d7a 0, transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, #0e4f63 0, transparent 60%), #0b0f1a;
+  --text: #eef1ff;
+  --muted: #9aa3c7;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-border: 1px solid rgba(255, 255, 255, 0.12);
+  --panel-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  --radius: 22px;
+  --blur: blur(18px);
+  --bar-bg: rgba(11, 15, 26, 0.7);
+  --bar-text: #eef1ff;
+  --bar-border: 1px solid rgba(255, 255, 255, 0.08);
+  --btn-bg: rgba(255, 255, 255, 0.08);
+  --btn-text: #eef1ff;
+  --btn-border: 1px solid rgba(255, 255, 255, 0.14);
+  --btn-radius: 14px;
+  --btn-shadow: none;
+  --accent: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  --accent-text: #fff;
+  --accent-strong: #67e8f9;
+  --chip-bg: rgba(255, 255, 255, 0.07);
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --input-border: 1px solid rgba(255, 255, 255, 0.18);
+  --focus: #22d3ee;
+  --bar-track: rgba(255, 255, 255, 0.1);
+  --gold: linear-gradient(90deg, #fbbf24, #f472b6);
+  --gold-text: #fcd34d;
+  --ok-bg: rgba(34, 197, 94, 0.16);
+  --warn-bg: rgba(251, 191, 36, 0.16);
+  --bad-bg: rgba(244, 63, 94, 0.18);
+  --bad: #f43f5e;
+  --fb-border: 1px solid rgba(255, 255, 255, 0.12);
+}
+[data-theme=modern] .brand { background: linear-gradient(90deg, #c4b5fd, #67e8f9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-theme=modern] button.primary { box-shadow: 0 6px 24px rgba(139, 92, 246, 0.45); }
+[data-theme=modern] .theme-card.on { outline: 3px solid #22d3ee; }
+
+/* ---------- Pixel: Gras, Erde, Stein, blockige Knöpfe ---------- */
+[data-theme=pixel] {
+  --font: ui-monospace, "Menlo", "Courier New", monospace;
+  --font-head: ui-monospace, "Menlo", "Courier New", monospace;
+  --head-spacing: 0.04em;
+  --bg: linear-gradient(#5d9c3b 0 64px, #4a7f2c 64px 72px, transparent 72px),
+        repeating-conic-gradient(#7a5232 0 25%, #6b4628 0 50%) 0 0 / 32px 32px, #7a5232;
+  --text: #f4f4f4;
+  --muted: #cfcfcf;
+  --panel: #8b8b8b;
+  --panel-border: 4px solid #2b2b2b;
+  --panel-shadow: inset -4px -4px 0 #555, inset 4px 4px 0 #c6c6c6;
+  --radius: 0;
+  --blur: none;
+  --bar-bg: #3a3a3a;
+  --bar-text: #fff;
+  --bar-border: 4px solid #1e1e1e;
+  --btn-bg: #727272;
+  --btn-text: #fff;
+  --btn-border: 3px solid #1e1e1e;
+  --btn-radius: 0;
+  --btn-shadow: inset -3px -3px 0 #4a4a4a, inset 3px 3px 0 #a9a9a9;
+  --accent: #3f8f2c;
+  --accent-text: #fff;
+  --accent-border: #1e1e1e;
+  --accent-strong: #ffe066;
+  --chip-bg: #6d6d6d;
+  --input-bg: #1e1e1e;
+  --input-border: 3px solid #a9a9a9;
+  --focus: #ffe066;
+  --bar-track: #3a3a3a;
+  --bar-track-border: 2px solid #1e1e1e;
+  --gold: #f9cf3a;
+  --gold-text: #ffe066;
+  --ok-bg: #2f6b22;
+  --warn-bg: #8a6a12;
+  --bad-bg: #7a2323;
+  --bad: #b33a3a;
+  --fb-border: 3px solid #1e1e1e;
+}
+[data-theme=pixel] body, [data-theme=pixel] .panel, [data-theme=pixel] button { text-shadow: 2px 2px 0 #3f3f3f; }
+[data-theme=pixel] input { text-shadow: none; }
+[data-theme=pixel] button.primary { box-shadow: inset -3px -3px 0 #24591a, inset 3px 3px 0 #6cc256; }
+[data-theme=pixel] .theme-card.on { outline: 4px solid #ffe066; }
+[data-theme=pixel] .coin { background: radial-gradient(circle at 35% 35%, #fff6c2 0 14%, #f9cf3a 15% 62%, #c98a06 63%); box-shadow: 0 0 0 2px #3f2a00; }

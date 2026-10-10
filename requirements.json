@@ -1,0 +1,55 @@
+{
+  "project": "Vokabeltrainer",
+  "status": "v1 – 1 Kind, nur Englisch, Eingabe per Tastatur",
+  "users": "1 Kind, ca. 12 Jahre; zunächst nur Englisch (Schulbuch)",
+  "platform": {
+    "R-PL-1": "Web-App (PWA) ohne Build-Schritt, läuft in Safari auf dem iPad, installierbar auf dem Home-Bildschirm, offline nutzbar",
+    "R-PL-2": "Hosting über GitHub Pages; Vokabeldaten sind Schulbuch-Inhalte – sie können entweder mit veröffentlicht oder per Datei-Import aufs Gerät gebracht werden"
+  },
+  "data": {
+    "R-DA-1": "Vokabeln als JSON pro Sprache und Unit (data/<lang>/unit-XX.json); data/index.json listet die Dateien",
+    "R-DA-2": "Jede Karte hat: id, en, de, p (Seite), sec (Abschnitt); optional forms, note, unsure",
+    "R-DA-3": "npm run check-vocab validiert alle Datendateien (Pflichtfelder, eindeutige IDs, bekannte Abschnitte)",
+    "R-DA-4": "Vokabel-Dateien können zusätzlich in der App importiert werden"
+  },
+  "learning": {
+    "R-LE-1": "Karteikasten mit 5 Fächern (Leitner): richtig = ein Fach höher, falsch = zurück in Fach 1. Wiedervorlage nach Fach: 1 → sofort, 2 → 1 Tag, 3 → 3 Tage, 4 → 7 Tage, 5 → 21 Tage",
+    "R-LE-2": "Lernbereich in Buchreihenfolge wählbar: Unit und Abschnitte (Einstieg, Part A/B/C, Story), optional Seitenbereich",
+    "R-LE-3": "Antwort wird eingetippt; Richtung Deutsch → Englisch",
+    "R-LE-4": "Antwortprüfung: Groß-/Kleinschreibung egal; '(to)', 'sth.', 'sb.', Artikel und Klammerteile optional; Varianten mit '/' werden akzeptiert",
+    "R-LE-5": "Passt die Antwort zu einer anderen Karte mit gleicher deutscher Bedeutung (z. B. 'Stimmung' = mood/atmosphere), zählt sie nicht als Fehler, sondern zeigt das gesuchte Wort; die Karte bleibt in ihrem Fach",
+    "R-LE-6": "Autokorrektur, Autovervollständigung, Rechtschreibprüfung und automatische Großschreibung sind im Eingabefeld aus",
+    "R-LE-7": "Ein Buchstabe falsch = 'fast richtig', zählt aber als falsch; Akzente/Sonderzeichen müssen exakt stimmen",
+    "R-LE-8": "Eine Runde hat bis zu 15 Karten: zuerst fällige Fehlwörter (R-LE-10), dann fällige Karten im Bereich, dann neue (max. 10 neue pro Runde). Falsch beantwortete Karten kommen am Rundenende als Übung (ohne Wertung), und zwar so lange, bis jede einmal richtig getippt wurde",
+    "R-LE-10": "Fehlwort = Karte, die einmal falsch/fast richtig war; gilt als Fehlwort, bis sie Fach 3 erreicht (an zwei Tagen richtig). Fällige Fehlwörter kommen in jede Runde, auch wenn sie außerhalb des gewählten Bereichs liegen – höchstens 8 pro Runde, damit Platz für den Bereich bleibt",
+    "R-LE-9": "Hinweise (note) und Formen (forms) werden erst nach der Antwort gezeigt, weil sie die Lösung verraten können"
+  },
+  "rewards": {
+    "R-RE-1": "Gold nur für richtige Antworten auf fällige Karten (Üben außerhalb des Plans bringt kein Gold – kein Farmen)",
+    "R-RE-2": "Gold pro Karte: max(1, round((2 + min(TageSeitLetzterAbfrage, 30) / 3) / (1 + 0,2 · bisherigeRichtige)))",
+    "R-RE-3": "Tagesziel 20 richtige Antworten: +10 Gold einmal pro Tag; Serienbonus +2 Gold je Serientag (max. +10)",
+    "R-RE-4": "Kontostand immer sichtbar; Gold-Gewinn wird direkt nach der Antwort angezeigt",
+    "R-RE-5": "Belohnungen (Name, Preis) legen die Eltern an; Einlösen nur mit Eltern-PIN; Einlösungen werden protokolliert"
+  },
+  "themes": {
+    "R-TH-1": "3 Skins: Heft, Hypermodern, Pixel (Minecraft-artig)",
+    "R-TH-2": "Skins ändern nur das Aussehen, nicht die Bedienung"
+  },
+  "storage": {
+    "R-ST-1": "Lernstand, Gold, Belohnungen und importierte Vokabeln lokal (localStorage), ohne Sync",
+    "R-ST-2": "Export des gesamten Stands als JSON-Datei; Import stellt ihn wieder her (nach Prüfung des Formats)"
+  },
+  "later": [
+    "Handschrift-Eingabe mit dem Apple Pencil",
+    "Französisch",
+    "Mehrere Kinder (Profile)",
+    "Synchronisierung zwischen Geräten",
+    "Richtung Englisch → Deutsch",
+    "Vorlesen der Vokabel (Sprachausgabe des iPads)"
+  ],
+  "open": [
+    "Vokabeldaten öffentlich auf GitHub Pages oder nur per Import?",
+    "S. 277 und S. 281 neu fotografieren (unsure-Einträge prüfen)",
+    "Welcome-Teil vor Unit 1 (ab S. 271?) ergänzen?"
+  ]
+}

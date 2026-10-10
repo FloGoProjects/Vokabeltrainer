@@ -1,0 +1,14 @@
+{
+  "name": "vokabeltrainer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "check-vocab": "node scripts/check-vocab.mjs",
+    "serve": "node scripts/serve.mjs",
+    "make-icons": "node scripts/make-icons.mjs"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
