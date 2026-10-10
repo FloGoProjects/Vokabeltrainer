@@ -25,6 +25,11 @@ Antworten eintippen, Belohnung „Vokabel-Gold“, 3 Skins. Anforderungen: `requ
 - `npm run serve` – lokaler Server auf http://localhost:8080 (Service Worker ist auf localhost aus)
 - `npm run make-icons` – Icons neu erzeugen
 
+## Veröffentlichung
+- Repo: https://github.com/FloGoProjects/Vokabeltrainer (öffentlich, Remote per HTTPS)
+- GitHub Pages aus Branch `main`, Ordner `/` → https://flogoprojects.github.io/Vokabeltrainer/
+- Deploy = Push auf `main`. Vorher `npm test` + `npm run check-vocab`, `VERSION` in `sw.js` erhöhen.
+
 ## Konventionen
 - Vokabel-IDs: `<lang>-u<unit>-<nr>` (z. B. `en-u1-042`), nie umnummerieren (Lernstand hängt daran).
 - Neue Unit: Datei `data/en/unit-XX.json` + Eintrag in `data/index.json` + `npm run check-vocab`.
